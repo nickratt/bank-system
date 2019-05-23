@@ -87,12 +87,14 @@ void overdraft(){
 
 int main()
 {
+  char input = 'y';
   int ans;
   int addMoney;
   int takeout;
   int trans;
 
   menu();
+  do{
   options();
   cout << ans << flush;
   cin >> ans;
@@ -128,6 +130,10 @@ int main()
   
   }
   overdraft();
+  cout << "would you like to do another transaction?  y/n: " << flush;
+  cin >> input;
+  }
+  while(input == 'y' || input == 'Y');
 
 } 
 
