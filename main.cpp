@@ -1,5 +1,5 @@
-float balance = 0;
-float saving = 0;
+double balance = 0.00;
+double saving = 0.00;
 
 #include <iostream>
 using namespace std;
@@ -23,20 +23,20 @@ void options()
 }
 
 
-int deposit(int x)
+int deposit(double x)
 {
   int deposit = x;
   balance = balance + deposit;
   return balance;
 }
 
-int withdraw(int x){
+int withdraw(double x){
   int withdraw = x;
   balance = balance - withdraw;
   return balance;
 }
 
-int transfer(int x){
+int transfer(double x){
   char ans;
   cout << "Would you like to transfer from your savings? y/n" << endl;
   cin >> ans;
@@ -62,18 +62,22 @@ int transfer(int x){
 }
 
 void overdraft(){
-  int newbalance;
-  int newsaving;
+  double newbalance;
+  double newsaving;
+  double newtotalbalance;
+  double newtotalsaving;
+
   if (balance < 0){
     cout << "OVERDRAFT FEE: 25%!!!" << endl;
-    newbalance = balance - (.25);
-    cout << "Your balance is now: " << newbalance << endl;
+    newbalance = balance + (balance * .25);
+    cout << "Your new balance is now: " << newbalance << endl;
 
 
   }else if(saving < 0) {
     cout << "OVERDRAFT FEE: 25%!!!" << endl;
-    newsaving = saving - .25;
-    cout << "Your saving is now: " << newsaving<< endl;
+    newsaving = saving + (saving * .25);
+    
+    cout << "Your new saving is now: " << newsaving<< endl;
   }
   else{
     cout << "No overdraft fee" << endl;
