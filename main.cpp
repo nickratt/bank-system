@@ -19,7 +19,7 @@ void options()
   cout << "01. Deposit" << endl;
   cout << "02. withdrawal" << endl;
   cout << "03. Transfer" << endl;
-  cout << "Enter an option: " << flush;
+
 }
 
 
@@ -95,8 +95,9 @@ int main()
 
   menu();
   do{
+
   options();
-  cout << ans << flush;
+  cout << "Enter an option: " << flush;
   cin >> ans;
   
   
