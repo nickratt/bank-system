@@ -6,6 +6,8 @@ using namespace std;
 
 
 void menu(){
+
+  cout << "*****************************************" << endl;
   cout << "***WELCOME TO THE ONLINE BANKING SYSTEM***" << endl;
   cout << "Current balance: " << balance << endl;
   cout << "Current savings: " <<saving << endl; 
@@ -25,15 +27,35 @@ void options()
 
 int deposit(double x)
 {
-  int deposit = x;
+  string ans;
+  cout << "Would you like to deposit in your balance or savings?: " << flush;
+  cin >> ans;
+  if (ans == "balance" || ans == "Balance" ){
+  double deposit = x;
   balance = balance + deposit;
   return balance;
+  }
+  else{
+  double deposit = x;
+  saving = deposit + saving;
+  return saving;
+  }
 }
 
 int withdraw(double x){
+  string ans;
+  cout << "Would you like to withdraw in your balance or savings?: " << flush;
+  cin >> ans;
+
+  if (ans == "balance" || ans == "Balance" ){
   int withdraw = x;
   balance = balance - withdraw;
   return balance;
+  }else{
+    int withdraw = x;
+  saving = saving - withdraw;
+  return saving;
+  }
 }
 
 int transfer(double x){
@@ -87,7 +109,7 @@ void overdraft(){
 
 int main()
 {
-  char input = 'y';
+  char input;
   int ans;
   int addMoney;
   int takeout;
@@ -108,6 +130,7 @@ int main()
     cin >> addMoney;
     deposit(addMoney);
     cout << "Your balance is now: $" << balance << endl;
+    cout << "Your saving is now: $" << saving << endl;
     break;
 
     case 2:
@@ -118,7 +141,7 @@ int main()
     break;
 
     case 3:
-    cout << "How much would you like to transfer: " << flush;
+    //cout << "How much would you like to transfer: " << flush;
     transfer(trans);
     cout << "Your balance is now: $" << balance << endl; 
     cout << "Your saving is now: $" << saving << endl;
@@ -131,6 +154,7 @@ int main()
   
   }
   overdraft();
+
   cout << "would you like to do another transaction?  y/n: " << flush;
   cin >> input;
   }
