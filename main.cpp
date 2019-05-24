@@ -138,6 +138,8 @@ int main()
     cin >> takeout;
     withdraw(takeout);
     cout << "Your balance is now: $" << balance << endl;
+    cout << "Your saving is now: $" << saving << endl;
+
     break;
 
     case 3:
