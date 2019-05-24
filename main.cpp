@@ -109,12 +109,24 @@ void overdraft(){
 
 int main()
 {
+
   char input;
   int ans;
   int addMoney;
   int takeout;
   int trans;
+  string newpassword;
 
+  string password;
+  cout << "Enter your password: " << flush;
+  cin >> password;
+
+  cout << "LOGIN" << endl;
+  cout << " " << endl;
+  cout << "What is your password: " << flush;
+  cin >> newpassword;
+
+if(password == newpassword){
   menu();
   do{
 
@@ -160,8 +172,10 @@ int main()
   cout << "would you like to do another transaction?  y/n: " << flush;
   cin >> input;
   }
+  
   while(input == 'y' || input == 'Y');
+}else{
+  cout << "Incorrect password!  Program closing." << endl;
+}
 
 } 
-
-
