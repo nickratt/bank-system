@@ -118,7 +118,7 @@ int main()
   string newpassword;
 
   string password;
-  cout << "Enter your password: " << flush;
+  cout << "create your password: " << flush;
   cin >> password;
 
   cout << "LOGIN" << endl;
