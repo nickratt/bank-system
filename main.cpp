@@ -84,22 +84,25 @@ int transfer(double x){
 }
 
 void overdraft(){
-  double newbalance;
-  double newsaving;
+  double *newbalance;
+  double *newsaving;
   double newtotalbalance;
   double newtotalsaving;
 
   if (balance < 0){
     cout << "OVERDRAFT FEE: 25%!!!" << endl;
-    newbalance = balance + (balance * .25);
-    cout << "Your new balance is now: " << newbalance << endl;
+    *newbalance = balance + (balance * .25);
+    balance = *newbalance;
+
+    cout << "Your new balance is now: " << *newbalance << endl;
 
 
   }else if(saving < 0) {
     cout << "OVERDRAFT FEE: 25%!!!" << endl;
-    newsaving = saving + (saving * .25);
+    *newsaving = saving + (saving * .25);
+    saving = *newsaving;
     
-    cout << "Your new saving is now: " << newsaving<< endl;
+    cout << "Your new saving is now: " << *newsaving<< endl;
   }
   else{
     cout << "No overdraft fee" << endl;
