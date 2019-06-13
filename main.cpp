@@ -88,7 +88,9 @@ void overdraft(){
   double *newsaving;
   double newtotalbalance;
   double newtotalsaving;
-
+  
+//debugging balance
+  
   if (balance < 0){
     cout << "OVERDRAFT FEE: 25%!!!" << endl;
     *newbalance = balance + (balance * .25);
